@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('git clone') {
             steps {
-                git url: 'https://github.com/gururajo/rest-calculator', branch: 'master'
+                git url: 'https://github.com/gururajo/rest-calculator', branch: 'main'
             }
         }
         stage('clean') {
