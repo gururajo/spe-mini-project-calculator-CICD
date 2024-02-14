@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('git clone') {
             steps {
-                git url: 'https://github.com/gururajo/rest-calculator', branch: 'main'
+                git url: 'https://github.com/gururajo/spe-mini-project-calculator-CICD', branch: 'main'
             }
         }
         stage('clean') {
