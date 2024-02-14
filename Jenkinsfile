@@ -8,8 +8,10 @@ pipeline {
         }
         stage('clean') {
             steps {
-		script {sh 'chmod 777 mvnw',
-                sh './mvnw clean'}
+                script {
+                    sh 'chmod 777 mvnw'
+                    sh './mvnw clean'
+                }
             }
         }
         stage('compile main') {
