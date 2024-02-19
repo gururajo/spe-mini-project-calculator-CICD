@@ -44,4 +44,18 @@ public class ScientificController {
    public ApiResult prime(@PathVariable long number ) {
       return getResult(_scientificCalculator.isPrime(number));
    }
+   @GetMapping("/sqrt/{number}")
+   public ApiResult squareRoot(@PathVariable BigDecimal number) {
+      return getResult(_scientificCalculator.calculateSquareRoot(number));
+   }
+
+   @GetMapping("/log/{number}")
+   public ApiResult naturalLogarithm(@PathVariable double number) {
+      return getResult(_scientificCalculator.calculateNaturalLogarithm(number));
+   }
+
+   @GetMapping("/power/{base}/{exponent}")
+   public ApiResult power(@PathVariable BigDecimal base, @PathVariable BigDecimal exponent) {
+      return getResult(_scientificCalculator.calculatePower(base, exponent));
+   }
 }

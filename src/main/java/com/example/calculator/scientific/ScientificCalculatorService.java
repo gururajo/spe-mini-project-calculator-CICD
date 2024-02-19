@@ -1,5 +1,6 @@
 package com.example.calculator.scientific;
 
+import java.math.BigDecimal;
 import java.math.BigInteger;
 
 import org.springframework.stereotype.Service;
@@ -29,5 +30,25 @@ public class ScientificCalculatorService {
          }
       }
       return true;
+   }
+   public BigDecimal calculateSquareRoot(BigDecimal number) {
+      if (number.compareTo(BigDecimal.ZERO) < 0) {
+         throw new ArithmeticException("Square root is not defined for negative numbers");
+      }
+      return new BigDecimal(Math.sqrt(number.doubleValue()));
+   }
+
+   public double calculateNaturalLogarithm(double number) {
+      if (number <= 0) {
+         throw new ArithmeticException("Natural logarithm is not defined for non-positive numbers");
+      }
+      return Math.log(number);
+   }
+
+   public BigDecimal calculatePower(BigDecimal base, BigDecimal exponent) {
+      if (base.compareTo(BigDecimal.ZERO) == 0 && exponent.compareTo(BigDecimal.ZERO) <= 0) {
+         throw new ArithmeticException("0^0 is undefined");
+      }
+      return base.pow(exponent.intValue());
    }
 }
